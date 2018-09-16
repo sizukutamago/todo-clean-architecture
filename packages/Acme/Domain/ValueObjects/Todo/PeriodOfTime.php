@@ -64,4 +64,19 @@ final class PeriodOfTime
 
         return $date;
     }
+
+    public function getStartDate(): string
+    {
+        return $this->formatter($this->startDate);
+    }
+
+    public function getEndDate(): string
+    {
+        return $this->formatter($this->endDate);
+    }
+
+    private function formatter(\DateTimeImmutable $date): string
+    {
+        return $date->format('y-m-d');
+    }
 }

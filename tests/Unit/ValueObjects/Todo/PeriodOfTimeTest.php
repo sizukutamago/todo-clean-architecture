@@ -40,9 +40,18 @@ class PeriodOfTimeTest extends TestCase
     public function 日付以外を入力した場合エラー()
     {
         try {
-            dd(new PeriodOfTime('fdafadie', 'fadfadf'));
+            new PeriodOfTime('fdafadie', 'fadfadf');
         } catch (DomainException $e) {
             $this->assertTrue(true);
         }
+    }
+
+    /** @test */
+    public function 日付の取得()
+    {
+        $startDate = '2000-12-12';
+        $date = new PeriodOfTime($startDate, '2020-2-2');
+
+        $this->assertEquals($date->getStartDate(), $startDate);
     }
 }

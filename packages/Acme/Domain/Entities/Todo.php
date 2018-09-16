@@ -35,5 +35,35 @@ class Todo
         $this->isDone = $isDone;
     }
 
+    /**
+     * @return string
+     */
+    public function getContent(): string
+    {
+        return $this->content->getContent();
+    }
 
+    /**
+     * @return string
+     */
+    public function getStartDate(): string
+    {
+        return $this->getStartDate();
+    }
+
+    /**
+     * @return string
+     */
+    public function getEndDate(): string
+    {
+        return $this->getEndDate();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDone(): bool
+    {
+        return $this->isDone;
+    }
 }
